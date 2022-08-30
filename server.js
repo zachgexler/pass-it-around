@@ -15,12 +15,12 @@ const app = express();
 //http://localhost:3000
 // I had help from internet and friends. It works, but I don't understand the jQuery, or how it's working or even where it's pulling from.
 
-app.get("/", (req, res) => {
+app.get("/", function(req, res)  {
     res.send(`<h3>99 Bottles of redbull on the wall</h3>
       <a href ="/98">Take one down, pass it around</a>`);
   });
   
-  app.get("/:numOfBottles", (req, res) => {
+  app.get("/:numOfBottles", function(req, res) {
     let bottleNumbers = req.params.numOfBottles;
     if (bottleNumbers > 0) {
       res.send(`<h3>${bottleNumbers} Bottles of redbull on the wall</h3>
